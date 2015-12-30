@@ -21,10 +21,10 @@ kbr0_ip_prefix = '172.17.'
 ip_address = address_for(node['kube']['interface'])
 
 # install openvswitch package
-package node['kube']['openvswitch']['package'] do
-  #action :upgrade
-  execute "rpm -Uvh https://repos.fedorapeople.org/openstack/openstack-juno/epel-7/openvswitch-2.3.1-2.el7.x86_64.rpm"
-end
+#package node['kube']['openvswitch']['package'] do
+#  action :upgrade
+#end
+execute "rpm -Uvh https://repos.fedorapeople.org/openstack/openstack-juno/epel-7/openvswitch-2.3.1-2.el7.x86_64.rpm"
 
 # start openvswitch service
 service 'openvswitch' do
